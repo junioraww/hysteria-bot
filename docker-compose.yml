@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  hysteria:
+    image: tobyxdd/hysteria:v2
+    container_name: hysteria
+    restart: always
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./hysteria/acme:/acme
+      - ./hysteria/config.yml:/etc/hysteria/config.yaml
+    command: ["server", "-c", "/etc/hysteria/config.yaml"]
+
+  bot:
+    image: oven/bun:latest
+    container_name: hysteria-bot
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./bot:/app
+      - ./data:/app/data
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:3000:3000"
+    entrypoint: ["/bin/sh", "-c", "bun install && bun --watch src/index.js"]
+
+volumes:
+  acme:

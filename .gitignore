@@ -1,0 +1,5 @@
+hysteria/acme
+hysteria/config.yml
+data/*
+bot/node_modules
+bot/.env
