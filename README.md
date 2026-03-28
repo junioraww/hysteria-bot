@@ -9,13 +9,14 @@
 
 ## Особенности
 - <b>Управление конфигами</b>  
-Команды <b>/add, /del, /list</b> — за счет задействования <a href="https://v2.hysteria.network/docs/advanced/Traffic-Stats-API/">Traffic Stats API</a>, при удалении конфига, клиенты сразу отключаются. Также имеется команда /clients
+Команды <b>/add, /del, /list</b>  
+За счет задействования <a href="https://v2.hysteria.network/docs/advanced/Traffic-Stats-API/">Traffic Stats API</a>, при удалении конфига, клиенты сразу отключаются. Дополнительно /clients
 
 - <b>Генерация QR-кода</b>  
 Быстрая и легковесная генерация QR-кода с <b>кастомным изображением</b> (без задействования тяжелых sharp и canvas!)
 
-- <b>Легко запустить</b>
-Проект обернут в ```docker-compose.yml```, для запуска нужен токен бота, любой токен для Traffic Stats API (указать в hysteria ```config.yml``` и bot ```.env```)
+- <b>Легко запустить</b>  
+Проект обернут в ```docker-compose.yml```, для запуска нужен токен бота от @botfather, любой токен для Traffic Stats API (указать в hysteria ```config.yml``` и bot ```.env```)
 
 > Для работы Hysteria2 нужен <b>рабочий домен!</b>
 ## В планах

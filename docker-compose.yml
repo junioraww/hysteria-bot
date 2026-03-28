@@ -18,13 +18,12 @@ services:
     container_name: hysteria-bot
     restart: always
     working_dir: /app
+    network_mode: "host"
     volumes:
       - ./bot:/app
       - ./data:/app/data
     env_file:
       - .env
-    ports:
-      - "127.0.0.1:3000:3000"
     entrypoint: ["/bin/sh", "-c", "bun install && bun --watch src/index.js"]
 
 volumes:

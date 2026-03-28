@@ -17,7 +17,7 @@ const SERVER_CONFIG = {
     insecure: 1
 };
 
-const DOCKER_ADDR = "172.17.0.1"
+const DOCKER_ADDR = "127.0.0.1"
 const HYSTERIA_API = "http://" + DOCKER_ADDR + ":9999"
 
 let users = {};
