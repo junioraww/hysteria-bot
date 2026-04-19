@@ -13,6 +13,18 @@ masquerade:
   proxy:
     url: https://news.ycombinator.com/
     rewriteHost: true
+  #listenHTTPS: :443 # recommended
+  #forceHTTPS: true
 trafficStats:
   listen: :9999
   secret: RANDOM_STRING
+bandwidth:
+  up: 200mbps
+  down: 200mbps
+#acl:
+  #inline:
+    #- reject(geoip:ru)
+    #- reject(geosite:category-ru)
+    #- reject(suffix:*.vk.*)
+    #- reject(suffix:*.dzen.*)
+    #- reject(suffix:*.yandex.*)
