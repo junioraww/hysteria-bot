@@ -23,7 +23,7 @@ export const handleMessages = (bot, hysteriaClients) => {
             const link = getHysteriaLink(username, password);
 
             const caption =
-            `⚡️ <b>Личный конфиг</b>\nДля использования VPN, скачайте <a href="https://github.com/MatsuriDayo/nekoray/releases"><b>Nekoray для PC</b></a> или <a href="https://github.com/2dust/v2rayNG/releases"><b>v2rayNG для Android, iOs</b></a>`
+            `⚡️ <b>Личный конфиг</b>\nДля использования VPN, скачайте <a href="github.com/qr243vbi/nekobox/releases/latest"><b>Nekoray для PC</b></a> или <a href="https://github.com/2dust/v2rayNG/releases/latest"><b>v2rayNG для Android, iOs</b></a>`
             + `\n\n<b>1. Скачайте фото</b>\n2. Запустите приложение\n3. Нажмите плюсик и добавьте конфиг ("импорт из QR-кода").\nЭто достаточно сделать один раз!`
             +`\n\n<b>Если QR-код не работает, добавьте ссылкой:</b>\n<code>${link}</code>`;
 
