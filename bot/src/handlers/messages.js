@@ -3,6 +3,8 @@ import { generateQrCode } from '../utils/qr-code.js';
 import { getHysteriaLink } from '../utils/vpn.js';
 import { hysteriaCall } from '../utils/api.js';
 
+import { getTopClients, formatTopClients } from '../managers/trafficStats.js'
+
 const ADMIN_ID = parseInt(process.env.ADMIN_ID);
 
 export const handleMessages = (bot, hysteriaClients) => {
@@ -95,6 +97,14 @@ export const handleMessages = (bot, hysteriaClients) => {
             const req = await hysteriaCall("/online")
             const data = await req.json()
             bot.sendMessage(chatId, JSON.stringify(data || {}, null, 1).slice(0,1000))
+        }
+
+        else if (text.startsWith('/daily')) {
+            const stats = await getTopClients();
+            const text = formatTopClients(stats).slice(0,1000);
+            bot.sendMessage(chatId, "👉🏻 <b>Использование за сутки</b>\n\n" + text, {
+                parse_mode: 'HTML'
+            })
         }
     });
 }
