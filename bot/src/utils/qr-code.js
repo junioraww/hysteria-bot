@@ -20,16 +20,6 @@ function readImageFileSync(buffer, filename = '') {
         return { width: img.width, height: img.height, data: img.data };
     } else {
         throw "Use PNG"
-        /*const decoded = jpeg.decode(buffer, { useTArray: true });
-         *        const { width, height, data } = decoded;
-         *        const rgba = Buffer.alloc(width * height * 4);
-         *        for (let i = 0, j = 0; i < data.length; i += 3, j += 4) {
-         *        rgba[j] = data[i];
-         *        rgba[j+1] = data[i+1];
-         *        rgba[j+2] = data[i+2];
-         *        rgba[j+3] = 255;
-    }
-    return { width, height, data: rgba };*/
     }
 }
 
@@ -147,7 +137,7 @@ function drawFilledRoundedRect(dst, dstW, dstH, ox, oy, w, h, r, color) {
     }
 }
 
-export async function generate(text, imageFilePath, opts = {}) {
+export async function generateQrCode(text, imageFilePath, opts = {}) {
     const scale = opts.scale || 8;
     const margin = opts.margin || 4;
     const ecLevel = opts.ecLevel || 'H';
