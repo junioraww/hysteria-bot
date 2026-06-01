@@ -11,7 +11,7 @@ const hysteriaClients = await launchJsonDb('./data/clients.json');
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
 createServer(hysteriaClients);
-startTrafficStats();
+startTrafficStats(bot);
 handleMessages(bot, hysteriaClients);
 handleErrors();
 
