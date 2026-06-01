@@ -56,9 +56,9 @@ export const handleMessages = (bot, hysteriaClients) => {
 
             const password = generateRandomString(16)
 
-            users[username] = password;
-
+            hysteria[username] = password;
             hysteriaClients.save();
+
             bot.sendMessage(chatId, `User ${username} added.`);
 
             generateAndSendQRCode(chatId, username)
