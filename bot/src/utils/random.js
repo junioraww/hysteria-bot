@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
 
-const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%^";
+const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!$%^";
 
 export function generateRandomString(length) {
     let result = '';
